@@ -10,7 +10,7 @@ public class Memoria {
     }
 
     private void setAleatorio() {
-        this.aleatorio = (int) (Math.random() * 5); //Mudar para 100 depois
+        this.aleatorio = (int) (Math.random() * 100) + 1;
     }
 
     private void setChances(int dificuldade) {
@@ -35,5 +35,9 @@ public class Memoria {
 
     public int getAleatorio() {
         return this.aleatorio;
+    }
+
+    public int getChances(){
+        return this.chances;
     }
 }
