@@ -3,6 +3,7 @@ package main.an.modelo;
 public class Memoria {
     private int aleatorio;
     private int chances;
+    private int tentativas;
 
     public Memoria(int dificuldade){
         setAleatorio();
@@ -24,13 +25,24 @@ public class Memoria {
         }
     }
 
-    public void reiniciarJogo(){
-        //TODO implementação do reinicio dos atributos
+    public boolean executarTentativa(int chute){
+        boolean terminado = true;
+        setTentativas();
+        if(chute > aleatorio) {
+            return !terminado;
+        } else if(chute < aleatorio){
+            return !terminado;
+        } else {
+            return terminado;
+        }
     }
 
-    public String executarTentativa(){
-        //TODO retorna ao meu console os valores
-        return null;
+    private void setTentativas(){
+        this.tentativas += 1;
+    }
+
+    public int getTentativas(){
+        return this.tentativas;
     }
 
     public int getAleatorio() {
